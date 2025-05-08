@@ -6,7 +6,7 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("vG3nVGZFpGR0-Gobb"); // EmailJS 사용자 ID
+      emailjs.init("vG3nVGZFpGR0-Gobb");
     })();
 
     function sendEmail(e) {
