@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>설문조사</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("vG3nVGZFpGR0-Gobb"); // EmailJS 사용자 ID
+    })();
+
+    function sendEmail(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_suhn06', 'template_im98fo5', e.target)
+        .then(function(response) {
+          alert('설문이 전송되었습니다. 감사합니다!');
+        }, function(error) {
+          alert('전송 실패: ' + JSON.stringify(error));
+        });
+    }
+  </script>
+</head>
+<body>
+  <h2>간단한 설문조사</h2>
+  <form onsubmit="sendEmail(event)">
+    <label>물보다 탄산음료를 더 자주 마시는 편인가요? <input type="text" name="user_1" required></label><br><br>
+    <label>짠 음식을 좋아하고 더 자주 먹나요? <input type="text" name="user_2" required></label><br><br>
+    <label>튀김 음식을 좋아하고 자주 먹나요? <input type="text" name="user_5" required></label><br><br>
+
+    <label>한 달에 배달음식을 몇 회 이상 먹나요? <input type="text" name="user_3" required></label><br><br>
+    <label>암 발병 원인이 유전자결함 때문인걸 알고 있었나요? <input type="text" name="user_4" required></label><br><br>
+    <label>암 예방방법에 대해 알고 있나요? <input type="text" name="user_6" required></label><br><br>
+
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>
